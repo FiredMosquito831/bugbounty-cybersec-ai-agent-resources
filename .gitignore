@@ -1,0 +1,18 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Cloned repos (already versioned upstream — see REPO_MANIFEST.md for URLs)
+repertoire/03_repos/*/
+# But track the manifest
+!repertoire/REPO_MANIFEST.md
+
+# Temporary extraction scripts (keep the outputs, not the scripts)
+repertoire/_build_*.ps1
+repertoire/_rebuild_*.ps1
+
+# Empty placeholder dirs (no content yet)
+repertoire/04_methodologies/.gitkeep
+repertoire/06_tools_ref/.gitkeep
+repertoire/07_vulnerability_classes/.gitkeep
