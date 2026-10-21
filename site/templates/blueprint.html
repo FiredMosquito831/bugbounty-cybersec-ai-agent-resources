@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="library-head">
+  <div class="container">
+    <div class="section-kicker">agent blueprint</div>
+    <h1>Architecture insights from verified research</h1>
+    <p>{{ stats.insights }} findings that should shape the agent's design, each traced back to a paper or repository in this archive.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="container">
+    <div class="grid-2" style="align-items:start">
+      <div>
+        {% for insight in blueprint.insights %}
+          <div class="insight">
+            <span class="insight-num">{{ "%02d"|format(insight.number) }}</span>
+            <div>
+              <h3>{{ insight.title }}</h3>
+              <dl>
+                {% if insight.finding %}<div><dt>Finding</dt><dd>{{ insight.finding }}</dd></div>{% endif %}
+                {% if insight.why %}<div><dt>Why it matters</dt><dd>{{ insight.why }}</dd></div>{% endif %}
+                {% if insight.how %}<div><dt>How to apply</dt><dd class="how">{{ insight.how }}</dd></div>{% endif %}
+              </dl>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="stack">
+        <div class="card">
+          <h3>Phase roadmap</h3>
+          <div class="timeline mt-24">
+            {% for phase in blueprint.phases %}
+              <div class="phase {{ 'done' if phase.status == 'complete' else ('next' if phase.status == 'next' else '') }}">
+                <span class="status">{{ phase.status }}</span>
+                <h3>{{ phase.phase }}. {{ phase.name }}</h3>
+                <p>{{ phase.detail }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="callout">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20 6v6c0 4.5-3.2 8-8 9.5C7.2 20 4 16.5 4 12V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><strong>Scope enforcement is not a prompt.</strong> The research is consistent: deterministic hooks outside the agent loop define what a target is, what may be touched, and when to stop.</p>
+        </div>
+
+        <div class="callout warn">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3 2.5 21h19Z"/><path d="M12 9v5M12 17h.01"/></svg>
+          <p><strong>Evidence-first.</strong> A finding without a reproducible proof-of-concept and captured evidence is a hypothesis, not a result. The agent must validate before reporting.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2 mt-40">
+      <div class="card">
+        <h3>Next concrete steps</h3>
+        <p style="margin:6px 0 12px">The archive is Phase 1. The research notes suggest this order for Phase 2:</p>
+        <ol style="color:var(--ink-2);font-size:13.5px;padding-left:20px;margin:0">
+          <li>Read the anchor papers (Sailor, ARACNE, ELFuzz, NOVA, Aegis).</li>
+          <li>Study the Claude Code agent repositories for orchestration patterns.</li>
+          <li>Design a multi-agent pipeline with explicit scope and evidence gates.</li>
+          <li>Convert disclosed-report patterns into structured evaluation data.</li>
+          <li>Implement recon → analysis → validation → reporting with deterministic limits.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>Where to look</h3>
+        <p style="margin:6px 0 12px">Map each design question to the archive:</p>
+        <div class="tool-chips">
+          <a class="tool-chip" href="papers.html">papers</a>
+          <a class="tool-chip" href="repos.html">repositories</a>
+          <a class="tool-chip" href="library.html?c=llm-security-prompt-injection">LLM security</a>
+          <a class="tool-chip" href="library.html?c=ai-driven-fuzzing">AI fuzzing</a>
+          <a class="tool-chip" href="library.html?c=methodologies-frameworks">methodologies</a>
+          <a class="tool-chip" href="taxonomy.html">taxonomy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

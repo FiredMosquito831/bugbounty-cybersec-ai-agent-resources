@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taxonomy · Bounty Atlas</title>
+  <meta name="description" content="OWASP Top 10, additional vulnerability classes and a tooling taxonomy for security agents.">
+  <meta name="keywords" content="bug bounty, vulnerability discovery, autonomous agents, AI security, LLM fuzzing, prompt injection, security research, OWASP, pentesting">
+  <meta name="author" content="FiredMosquito831">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bugbounty.danubelabs.net/taxonomy.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#060b11">
+  <link rel="stylesheet" href="assets/site.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bounty Atlas">
+  <meta property="og:title" content="Taxonomy · Bounty Atlas">
+  <meta property="og:description" content="OWASP Top 10, additional vulnerability classes and a tooling taxonomy for security agents.">
+  <meta property="og:url" content="https://bugbounty.danubelabs.net/taxonomy.html">
+  <meta property="og:image" content="https://bugbounty.danubelabs.net/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Taxonomy · Bounty Atlas">
+  <meta name="twitter:description" content="OWASP Top 10, additional vulnerability classes and a tooling taxonomy for security agents.">
+  <meta name="twitter:image" content="https://bugbounty.danubelabs.net/og.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Bounty Atlas",
+    "url": "https://bugbounty.danubelabs.net",
+    "description": "OWASP Top 10, additional vulnerability classes and a tooling taxonomy for security agents.",
+    "inLanguage": "en"
+  }
+  </script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20 6v6c0 4.5-3.2 8-8 9.5C7.2 20 4 16.5 4 12V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <span class="brand-text"><span class="brand-name">Bounty<span class="green">Atlas</span></span><small>autonomous security research</small></span>
+    </a>
+    <nav class="site-nav" id="siteNav" aria-label="Main">
+        <a href="library.html" class="">Library</a>
+        <a href="collections.html" class="">Collections</a>
+        <a href="papers.html" class="">Papers</a>
+        <a href="repos.html" class="">Repositories</a>
+        <a href="taxonomy.html" class="active">Taxonomy</a>
+        <a href="blueprint.html" class="">Blueprint</a>
+        <a href="about.html" class="">About</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-outline btn-sm" href="https://github.com/FiredMosquito831/bugbounty-cybersec-ai-agent-resources" rel="noopener">GitHub ↗</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="library-head">
+  <div class="container">
+    <div class="section-kicker">taxonomy</div>
+    <h1>What the agent must reason about</h1>
+    <p>OWASP classifications, additional vulnerability classes and the tooling groups the research identified. Extracted from <code>repertoire/AUTONOMOUS_AGENT_CONTEXT.md</code>.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="container">
+    <div class="tax-section">
+      <h2>OWASP Top 10 (2021)</h2>
+      <div class="owasp-list">
+          <div class="owasp-item">
+            <span class="code">A01</span>
+            <div><strong>Broken Access Control</strong><p>IDOR/BOLA, privilege escalation, CORS, JWT attacks</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A02</span>
+            <div><strong>Cryptographic Failures</strong><p>weak algorithms, key management, SSL/TLS, padding oracles</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A03</span>
+            <div><strong>Injection</strong><p>SQLi, NoSQLi, OS command, SSTI, XXE, LDAP, XPath, CRLF</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A04</span>
+            <div><strong>Insecure Design</strong><p>business logic, race conditions, state machine abuse</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A05</span>
+            <div><strong>Security Misconfiguration</strong><p>default accounts, headers, CORS/CSP, cloud misconfig</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A06</span>
+            <div><strong>Vulnerable Components</strong><p>known CVEs, supply chain, dependency confusion</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A07</span>
+            <div><strong>Auth Failures</strong><p>weak passwords, credential stuffing, JWT flaws, OAuth misconfig</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A08</span>
+            <div><strong>Software/Data Integrity</strong><p>insecure deserialization, CI/CD abuse</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A09</span>
+            <div><strong>Logging Failures</strong><p>missing logs, log injection</p></div>
+          </div>
+          <div class="owasp-item">
+            <span class="code">A10</span>
+            <div><strong>SSRF</strong><p>URL fetching, cloud metadata, IPv4/IPv6 bypass</p></div>
+          </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="tax-section">
+        <h2>OWASP Top 10:2025 changes</h2>
+        <div class="card">
+          <ul style="margin:0;padding-left:20px;color:var(--ink-2);font-size:13.5px">
+<li>A02: Security Misconfiguration moved to #2 (from #5)</li><li>A03: Software Supply Chain Failures newly elevated to top-10</li>          </ul>
+        </div>
+      </div>
+      <div class="tax-section">
+        <h2>OWASP API Top 10 (2023)</h2>
+        <div class="card">
+          <div class="tool-chips">
+<span class="tool-chip">API1: BOLA</span><span class="tool-chip">API2: Broken Auth</span><span class="tool-chip">API3: Mass Assignment</span><span class="tool-chip">API4: Resource Consumption</span><span class="tool-chip">API5: BFLA</span><span class="tool-chip">API6: Sensitive Business Flows</span><span class="tool-chip">API7: SSRF</span><span class="tool-chip">API8: Misconfiguration</span><span class="tool-chip">API9: Inventory Management</span><span class="tool-chip">API10: Unsafe API Consumption</span>          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tax-section">
+      <h2>Additional vulnerability classes</h2>
+      <div class="class-grid">
+          <div class="class-item"><strong>XSS</strong><p>Reflected, Stored, DOM, Blind, via file upload</p></div>
+          <div class="class-item"><strong>SSTI</strong><p>Jinja2, Twig, Freemarker, Velocity</p></div>
+          <div class="class-item"><strong>XXE</strong><p>SVG uploads, DOCX/XLSX, OOB DTD</p></div>
+          <div class="class-item"><strong>File Upload</strong><p>extension bypass, Content-Type, double extensions, web shell</p></div>
+          <div class="class-item"><strong>LFI/RFI</strong><p>path traversal, PHP wrappers, log poisoning</p></div>
+          <div class="class-item"><strong>CSRF</strong><p>missing tokens, SameSite bypass</p></div>
+          <div class="class-item"><strong>Open Redirect</strong><p>absolute URLs, @ syntax, hash manipulation</p></div>
+          <div class="class-item"><strong>Prototype Pollution</strong><p>proto, constructor.prototype</p></div>
+          <div class="class-item"><strong>Cache Poisoning</strong><p>header reflection, X-Forwarded-Host</p></div>
+          <div class="class-item"><strong>Subdomain Takeover</strong><p>dangling CNAMEs</p></div>
+          <div class="class-item"><strong>GraphQL</strong><p>introspection, authorization, injection</p></div>
+          <div class="class-item"><strong>WebSockets</strong><p>message injection, auth bypass</p></div>
+          <div class="class-item"><strong>OAuth</strong><p>redirect_uri, state, PKCE, code interception</p></div>
+          <div class="class-item"><strong>Business Logic</strong><p>workflow bypass, pricing, race conditions</p></div>
+          <div class="class-item"><strong>Deserialization</strong><p>Java, PHP, Python, .NET gadget chains</p></div>
+          <div class="class-item"><strong>Memory Corruption</strong><p>buffer overflow, UAF, format string, integer overflow</p></div>
+          <div class="class-item"><strong>Auth Bypass</strong><p>SQLi-based, JWT alg=none, session prediction</p></div>
+          <div class="class-item"><strong>Privilege Escalation</strong><p>horizontal, vertical, AD, sudo</p></div>
+          <div class="class-item"><strong>Cryptography</strong><p>weak ciphers, ECB, hardcoded keys, timing attacks</p></div>
+          <div class="class-item"><strong>Secrets Exposure</strong><p>API keys in code, git history, logs</p></div>
+          <div class="class-item"><strong>Prompt Injection</strong><p>direct, indirect, MCP tool poisoning, semantic</p></div>
+          <div class="class-item"><strong>Smart Contract</strong><p>reentrancy, flash loans, oracle manipulation, MEV</p></div>
+      </div>
+    </div>
+
+    <div class="tax-section">
+      <h2>Tooling taxonomy</h2>
+        <div class="tool-group">
+          <h3>Reconnaissance / OSINT</h3>
+          <div class="tool-chips">
+<span class="tool-chip">subfinder</span><span class="tool-chip">amass</span><span class="tool-chip">assetfinder</span><span class="tool-chip">findomain</span><span class="tool-chip">chaos</span><span class="tool-chip">crt.sh</span><span class="tool-chip">Censys</span><span class="tool-chip">Shodan</span><span class="tool-chip">theHarvester</span><span class="tool-chip">SpiderFoot</span><span class="tool-chip">securitytrails</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>HTTP/URL Discovery</h3>
+          <div class="tool-chips">
+<span class="tool-chip">gau</span><span class="tool-chip">waybackurls</span><span class="tool-chip">katana</span><span class="tool-chip">ffuf</span><span class="tool-chip">gobuster</span><span class="tool-chip">feroxbuster</span><span class="tool-chip">httpx</span><span class="tool-chip">httprobe</span><span class="tool-chip">aquatone</span><span class="tool-chip">linkfinder</span><span class="tool-chip">kiterunner</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Network Scanning</h3>
+          <div class="tool-chips">
+<span class="tool-chip">nmap</span><span class="tool-chip">naabu</span><span class="tool-chip">masscan</span><span class="tool-chip">rustscan</span><span class="tool-chip">Bettercap</span><span class="tool-chip">Responder</span><span class="tool-chip">testssl.sh</span><span class="tool-chip">sslscan</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Web Proxy / Interception</h3>
+          <div class="tool-chips">
+<span class="tool-chip">Burp Suite</span><span class="tool-chip">OWASP ZAP</span><span class="tool-chip">mitmproxy</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Web Fuzzing / Scanning</h3>
+          <div class="tool-chips">
+<span class="tool-chip">ffuf</span><span class="tool-chip">nuclei</span><span class="tool-chip">sqlmap</span><span class="tool-chip">dalfox</span><span class="tool-chip">XSStrike</span><span class="tool-chip">wpscan</span><span class="tool-chip">nikto</span><span class="tool-chip">graphqler</span><span class="tool-chip">crackql</span><span class="tool-chip">inql</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>API Testing</h3>
+          <div class="tool-chips">
+<span class="tool-chip">RESTler</span><span class="tool-chip">arjun</span><span class="tool-chip">jwt_tool</span><span class="tool-chip">Postman</span><span class="tool-chip">vespasian</span><span class="tool-chip">apithief</span><span class="tool-chip">apiprober</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Password / Credential</h3>
+          <div class="tool-chips">
+<span class="tool-chip">hashcat</span><span class="tool-chip">John the Ripper</span><span class="tool-chip">CeWL</span><span class="tool-chip">hydra</span><span class="tool-chip">medusa</span><span class="tool-chip">mimikatz</span><span class="tool-chip">secretsdump</span><span class="tool-chip">linpeas</span><span class="tool-chip">winpeas</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Exploitation Frameworks</h3>
+          <div class="tool-chips">
+<span class="tool-chip">Metasploit</span><span class="tool-chip">searchsploit</span><span class="tool-chip">Sliver</span><span class="tool-chip">Havoc</span><span class="tool-chip">Pacu</span><span class="tool-chip">pwnable.kr</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Post-Exploitation</h3>
+          <div class="tool-chips">
+<span class="tool-chip">linpeas</span><span class="tool-chip">winpeas</span><span class="tool-chip">BloodHound</span><span class="tool-chip">Certipy</span><span class="tool-chip">Impacket</span><span class="tool-chip">chisel</span><span class="tool-chip">ligolo-ng</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Wireless</h3>
+          <div class="tool-chips">
+<span class="tool-chip">aircrack-ng</span><span class="tool-chip">bettercap</span><span class="tool-chip">killerbee</span><span class="tool-chip">chirpotle</span><span class="tool-chip">z-attack-ng</span><span class="tool-chip">angryoxide</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Cloud</h3>
+          <div class="tool-chips">
+<span class="tool-chip">Pacu</span><span class="tool-chip">ScoutSuite</span><span class="tool-chip">cloud-custodian</span><span class="tool-chip">checkov</span><span class="tool-chip">terrascan</span><span class="tool-chip">trivy</span><span class="tool-chip">grype</span><span class="tool-chip">syft</span><span class="tool-chip">cloudsploit</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Mobile</h3>
+          <div class="tool-chips">
+<span class="tool-chip">MobSF</span><span class="tool-chip">Frida</span><span class="tool-chip">jadx</span><span class="tool-chip">apktool</span><span class="tool-chip">objection</span><span class="tool-chip">medusa</span><span class="tool-chip">rekit</span><span class="tool-chip">revkit</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Social Engineering</h3>
+          <div class="tool-chips">
+<span class="tool-chip">GoPhish</span><span class="tool-chip">evilginx2</span><span class="tool-chip">SET</span><span class="tool-chip">modlishka</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Evasion</h3>
+          <div class="tool-chips">
+<span class="tool-chip">Donut</span><span class="tool-chip">LOLBins</span><span class="tool-chip">AMSI bypass</span><span class="tool-chip">AV/EDR evasion</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Forensic / DFIR</h3>
+          <div class="tool-chips">
+<span class="tool-chip">Volatility3</span><span class="tool-chip">AVML</span><span class="tool-chip">Timesketch</span><span class="tool-chip">Velociraptor</span><span class="tool-chip">Elastic SIEM</span><span class="tool-chip">Splunk</span><span class="tool-chip">Wazuh</span><span class="tool-chip">Sigma</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Binary / Reverse Engineering</h3>
+          <div class="tool-chips">
+<span class="tool-chip">Ghidra</span><span class="tool-chip">Radare2</span><span class="tool-chip">Binary Ninja</span><span class="tool-chip">IDA</span><span class="tool-chip">GDB</span><span class="tool-chip">pwndbg</span><span class="tool-chip">GEF</span><span class="tool-chip">pwntools</span><span class="tool-chip">angr</span><span class="tool-chip">ROPGadget</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Compliance</h3>
+          <div class="tool-chips">
+<span class="tool-chip">OpenSCAP</span><span class="tool-chip">Lynis</span><span class="tool-chip">kube-bench</span><span class="tool-chip">kube-hunter</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Static Analysis / Code Review</h3>
+          <div class="tool-chips">
+<span class="tool-chip">CodeQL</span><span class="tool-chip">Semgrep</span><span class="tool-chip">SonarQube</span><span class="tool-chip">ESLint</span><span class="tool-chip">SpotBugs</span><span class="tool-chip">Bandit</span><span class="tool-chip">gosec</span><span class="tool-chip">cargo-audit</span><span class="tool-chip">npm audit</span><span class="tool-chip">pip-audit</span><span class="tool-chip">slither</span><span class="tool-chip">mythril</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Fuzzing</h3>
+          <div class="tool-chips">
+<span class="tool-chip">AFL++</span><span class="tool-chip">libFuzzer</span><span class="tool-chip">Honggfuzz</span><span class="tool-chip">Angora</span><span class="tool-chip">VUzzer</span><span class="tool-chip">Eclipser</span><span class="tool-chip">QSYM</span><span class="tool-chip">Driller</span><span class="tool-chip">Echidna</span><span class="tool-chip">Medusa</span><span class="tool-chip">Halmos</span>          </div>
+        </div>
+        <div class="tool-group">
+          <h3>Claude Code Specific</h3>
+          <div class="tool-chips">
+<span class="tool-chip">scope_check.py</span>          </div>
+        </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" style="margin-bottom:10px">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20 6v6c0 4.5-3.2 8-8 9.5C7.2 20 4 16.5 4 12V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          <span class="brand-text"><span class="brand-name">Bounty<span class="green">Atlas</span></span></span>
+        </a>
+        <p class="footer-note">Phase 1 research foundation for an autonomous bug-bounty and vulnerability-discovery agent. Read-only sources, curated and indexed.</p>
+      </div>
+      <div>
+        <h4>Research</h4>
+        <a href="library.html">Source library</a>
+        <a href="collections.html">Collections</a>
+        <a href="papers.html">Papers</a>
+        <a href="repos.html">Repositories</a>
+      </div>
+      <div>
+        <h4>Design</h4>
+        <a href="taxonomy.html">Taxonomy</a>
+        <a href="blueprint.html">Agent blueprint</a>
+        <a href="about.html">Methodology</a>
+        <a href="https://github.com/FiredMosquito831/bugbounty-cybersec-ai-agent-resources" rel="noopener">Repository ↗</a>
+      </div>
+      <div>
+        <h4>Safety</h4>
+        <a href="about.html#responsible-use">Responsible use</a>
+        <a href="about.html#license">License</a>
+        <a href="https://bugbounty.danubelabs.net/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 FiredMosquito831 · research archive, no exploit code</span>
+      <span>built v2.0.0 · 1216 sources</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
+</body>
+</html>

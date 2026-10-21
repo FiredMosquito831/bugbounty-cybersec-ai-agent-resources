@@ -1,0 +1,192 @@
+[
+ {
+  "file": "elfuzz_llm_synthesized_fuzzers.pdf",
+  "title": "ELFuzz: LLM-Synthesized Generation Fuzzers for Real-World Software",
+  "source_url": "https://www.usenix.org/system/files/usenixsecurity25-chen-chuyang.pdf",
+  "source_label": "USENIX Security 2025",
+  "description": "Ohio State/NYU. CodeLlama-13B synthesizes Python-based generation fuzzers. Up to 434.8% more code coverage than second-best SOTA on cvc5 within 10 min. Fuzzer space model (lattice structure) contributes up to 62.5% to effectiveness.",
+  "kind": "PDF",
+  "anchor": true,
+  "local_path": "papers/elfuzz_llm_synthesized_fuzzers.pdf",
+  "slug": "elfuzz-llm-synthesized-fuzzers",
+  "alternates": []
+ },
+ {
+  "file": "owasp_threat_modeling_cheat_sheet.html",
+  "title": "OWASP Threat Modeling Cheat Sheet",
+  "source_url": "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html",
+  "source_label": "cheatsheetseries.owasp.org",
+  "description": "Four-question framework (Adam Shostack): What are we working on? / What can go wrong? / What are we going to do about it? / Did we do a good enough job? STRIDE categorization. anchor for agent workflow design.",
+  "kind": "HTML",
+  "anchor": true,
+  "local_path": "papers/owasp_threat_modeling_cheat_sheet.html",
+  "slug": "owasp-threat-modeling-cheat-sheet",
+  "alternates": []
+ },
+ {
+  "file": "owasp_top10_2025.html",
+  "title": "OWASP Top 10:2025",
+  "source_url": "https://owasp.org/Top10/2025/",
+  "source_label": "owasp.org/Top10/2025/",
+  "description": "A03:2025 Software Supply Chain Failures newly elevated to top-10. A01:2025 Broken Access Control remains #1. Based on NVD data (~175,000 CVEs, 643 CWEs), CVSSv2/v3, incidence rates. Data covers 2021-2024.",
+  "kind": "HTML",
+  "anchor": true,
+  "local_path": "papers/owasp_top10_2025.html",
+  "slug": "owasp-top10-2025",
+  "alternates": []
+ },
+ {
+  "file": "sailor_llm_fuzzing_vuln_discovery.pdf",
+  "title": "Sailor: Static Analysis-Guided LLM Harness Synthesis for Vulnerability Discovery",
+  "source_url": "https://arxiv.org/abs/2604.06506",
+  "source_label": "arXiv:2604.06506",
+  "description": "UCSB paper. Three-phase pipeline: static analysis→LLM harness synthesis→symbolic execution→concrete validation. 379 vulns vs 12 by Claude Code alone across 10 C/C++ projects (6.8M LoC). Ablation: removing any component collapses results. anchor for agent architecture.",
+  "kind": "PDF",
+  "anchor": true,
+  "local_path": "papers/sailor_llm_fuzzing_vuln_discovery.pdf",
+  "slug": "sailor-llm-fuzzing-vuln-discovery",
+  "alternates": []
+ },
+ {
+  "file": "agentward_lifecycle_security_ai_agents.pdf",
+  "title": "AgentWard: A Lifecycle Security Architecture for Autonomous AI Agents",
+  "source_url": "https://arxiv.org/abs/2604.24657",
+  "source_label": "arXiv:2604.24657",
+  "description": "Five-stage lifecycle defense-in-depth: initialization → input processing → memory → decision-making → execution. Plugin-native prototype on OpenClaw. Cross-layer threat propagation interception.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/agentward_lifecycle_security_ai_agents.pdf",
+  "slug": "agentward-lifecycle-security-ai-agents",
+  "alternates": []
+ },
+ {
+  "file": "agentxploit_redteaming_ai_agents.pdf",
+  "title": "AgentXploit: End-to-End Redteaming of Black-Box AI Agents",
+  "source_url": "https://arxiv.org/abs/2505.05849",
+  "source_label": "arXiv:2505.05849",
+  "description": "Berkeley team (Dawn Song). Black-box fuzzing framework for indirect prompt injection. 71% success vs o3-mini agents, 70% vs GPT-4o on AgentDojo/VWA-adv. MCTS-based seed selection.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/agentxploit_redteaming_ai_agents.pdf",
+  "slug": "agentxploit-redteaming-ai-agents",
+  "alternates": [
+   {
+    "file": "agentxploit_v2.pdf",
+    "note": "Same paper alternate version."
+   }
+  ]
+ },
+ {
+  "file": "llm_security_code_review_capabilities.pdf",
+  "title": "An Insight into Security Code Review with LLMs: Capabilities, Obstacles, and Influential Factors",
+  "source_url": "https://arxiv.org/abs/2401.16310",
+  "source_label": "arXiv:2401.16310",
+  "description": "Empirical study: 7 LLMs vs SAST tools for security code review. LLMs significantly outperform SAST. DeepSeek-R1 best, then GPT-4. CoT + commit message prompt optimal.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/llm_security_code_review_capabilities.pdf",
+  "slug": "llm-security-code-review-capabilities",
+  "alternates": []
+ },
+ {
+  "file": "aracne_llm_pentesting_agent.pdf",
+  "title": "ARACNE: An LLM-Based Autonomous Shell Pentesting Agent",
+  "source_url": "https://arxiv.org/abs/2502.18528",
+  "source_label": "arXiv:2502.18528",
+  "description": "Fully autonomous LLM-powered SSH pentesting agent. Multi-LLM (GPT-o3-mini planning, LLaMA 3.1 command formulation, GPT-4o summarization). 60% success vs ShelLM defender, 57.58% vs OverTheWire Bandit, avg <5 actions when winning.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/aracne_llm_pentesting_agent.pdf",
+  "slug": "aracne-llm-pentesting-agent",
+  "alternates": [
+   {
+    "file": "aracne.pdf",
+    "note": "Same paper, shorter filename."
+   }
+  ]
+ },
+ {
+  "file": "prompt_injection_defense_patterns.pdf",
+  "title": "Design Patterns for Securing LLM Agents against Prompt Injections",
+  "source_url": "https://arxiv.org/abs/2506.08837",
+  "source_label": "arXiv:2506.08837",
+  "description": "16-author paper (Invariant Labs, IBM, EPFL, ETH Zurich, Google, Microsoft, Swisscom, Kyutai). Systematizes prompt injection defense patterns for LLM agents. Foundational reading for agent security architecture.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/prompt_injection_defense_patterns.pdf",
+  "slug": "prompt-injection-defense-patterns",
+  "alternates": []
+ },
+ {
+  "file": "fuzzing_guidance_weakest_preconditions.pdf",
+  "title": "Fuzzing Guidance for Weakest Preconditions",
+  "source_url": "https://arxiv.org/abs/2507.05272",
+  "source_label": "arXiv:2507.05272",
+  "description": "Springer 2026. GPT-4o correctness on sorting benchmarks: 35% → 67.50% with fuzzing feedback loop. Demonstrates LLM+fuzzing feedback improves program synthesis correctness. (Note: 'dramatically improves' framing overgeneralized — verified as scoped result only.)",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/fuzzing_guidance_weakest_preconditions.pdf",
+  "slug": "fuzzing-guidance-weakest-preconditions",
+  "alternates": []
+ },
+ {
+  "file": "hyllfuzz_llm_concolic_fuzzing.pdf",
+  "title": "HyLLfuzz: LLM-Based Concolic Execution for Coverage-Guided Fuzzing",
+  "source_url": "https://arxiv.org/abs/2412.15931",
+  "source_label": "arXiv:2412.15931",
+  "description": "NUS paper. Achieves concolic execution effects without symbolic constraint solving. Program slicing + LLM input modification suggestions. 31-59% more branches covered. (Note: speed claims refuted in verification.)",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/hyllfuzz_llm_concolic_fuzzing.pdf",
+  "slug": "hyllfuzz-llm-concolic-fuzzing",
+  "alternates": []
+ },
+ {
+  "file": "lessons_defending_gemini_prompt_injection.pdf",
+  "title": "Lessons from Defending Gemini Against Indirect Prompt Injections",
+  "source_url": "https://arxiv.org/abs/2505.14534",
+  "source_label": "arXiv:2505.14534",
+  "description": "Google DeepMind's adversarial evaluation framework for Gemini. Adaptive attack suite run continuously against past/current/future model versions. Practical lessons on adversarial robustness testing.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/lessons_defending_gemini_prompt_injection.pdf",
+  "slug": "lessons-defending-gemini-prompt-injection",
+  "alternates": []
+ },
+ {
+  "file": "oet_optimization_prompt_injection.pdf",
+  "title": "OET: Optimization-based prompt injection Evaluation Toolkit",
+  "source_url": "https://arxiv.org/abs/2505.00843",
+  "source_label": "arXiv:2505.00843",
+  "description": "Standardized benchmark for prompt injection attack/defense evaluation. Adaptive testing with white-box and black-box optimization. Shows current defenses remain susceptible.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/oet_optimization_prompt_injection.pdf",
+  "slug": "oet-optimization-prompt-injection",
+  "alternates": []
+ },
+ {
+  "file": "aegis_protocol_autonomous_ai_agents.pdf",
+  "title": "The Aegis Protocol: A Foundational Security Framework for Autonomous AI Agents",
+  "source_url": "https://arxiv.org/abs/2508.19267",
+  "source_label": "arXiv:2508.19267",
+  "description": "Layered security framework: W3C DIDs for identity, NIST PQC for communication, Halo2 ZKP for policy compliance. Formal adversary model extending Dolev-Yao. 0% success across 20,000 attack trials in simulation.",
+  "kind": "PDF",
+  "anchor": false,
+  "local_path": "papers/aegis_protocol_autonomous_ai_agents.pdf",
+  "slug": "aegis-protocol-autonomous-ai-agents",
+  "alternates": []
+ },
+ {
+  "file": "nova_frontier_ai_vuln_discovery.html",
+  "title": "The Frontier AI Vulnerability Burst: Industrializing Autonomous Zero-Day Discovery",
+  "source_url": "https://unit42.paloaltonetworks.com/frontier-ai-vulnerability-burst/",
+  "source_label": "Unit 42 / Palo Alto Networks",
+  "description": "NOVA system: multi-agent, multi-model, 3,915 OSS projects → 14,090 confirmed vulns in 2 months, 99.4% unreported, 40% high/critical. Pipeline: review history → read code → identify candidates → create PoC → validate in clean env → patch candidate → disclosure report.",
+  "kind": "HTML",
+  "anchor": false,
+  "local_path": "papers/nova_frontier_ai_vuln_discovery.html",
+  "slug": "nova-frontier-ai-vuln-discovery",
+  "alternates": []
+ }
+]

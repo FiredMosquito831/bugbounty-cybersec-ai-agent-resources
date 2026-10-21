@@ -1,0 +1,411 @@
+{
+ "owasp_top10_2021": [
+  {
+   "code": "A01",
+   "name": "Broken Access Control",
+   "detail": "IDOR/BOLA, privilege escalation, CORS, JWT attacks"
+  },
+  {
+   "code": "A02",
+   "name": "Cryptographic Failures",
+   "detail": "weak algorithms, key management, SSL/TLS, padding oracles"
+  },
+  {
+   "code": "A03",
+   "name": "Injection",
+   "detail": "SQLi, NoSQLi, OS command, SSTI, XXE, LDAP, XPath, CRLF"
+  },
+  {
+   "code": "A04",
+   "name": "Insecure Design",
+   "detail": "business logic, race conditions, state machine abuse"
+  },
+  {
+   "code": "A05",
+   "name": "Security Misconfiguration",
+   "detail": "default accounts, headers, CORS/CSP, cloud misconfig"
+  },
+  {
+   "code": "A06",
+   "name": "Vulnerable Components",
+   "detail": "known CVEs, supply chain, dependency confusion"
+  },
+  {
+   "code": "A07",
+   "name": "Auth Failures",
+   "detail": "weak passwords, credential stuffing, JWT flaws, OAuth misconfig"
+  },
+  {
+   "code": "A08",
+   "name": "Software/Data Integrity",
+   "detail": "insecure deserialization, CI/CD abuse"
+  },
+  {
+   "code": "A09",
+   "name": "Logging Failures",
+   "detail": "missing logs, log injection"
+  },
+  {
+   "code": "A10",
+   "name": "SSRF",
+   "detail": "URL fetching, cloud metadata, IPv4/IPv6 bypass"
+  }
+ ],
+ "owasp_2025_changes": [
+  "A02: Security Misconfiguration moved to #2 (from #5)",
+  "A03: Software Supply Chain Failures newly elevated to top-10"
+ ],
+ "owasp_api_top10": [
+  "API1: BOLA",
+  "API2: Broken Auth",
+  "API3: Mass Assignment",
+  "API4: Resource Consumption",
+  "API5: BFLA",
+  "API6: Sensitive Business Flows",
+  "API7: SSRF",
+  "API8: Misconfiguration",
+  "API9: Inventory Management",
+  "API10: Unsafe API Consumption"
+ ],
+ "vulnerability_classes": [
+  {
+   "name": "XSS",
+   "detail": "Reflected, Stored, DOM, Blind, via file upload"
+  },
+  {
+   "name": "SSTI",
+   "detail": "Jinja2, Twig, Freemarker, Velocity"
+  },
+  {
+   "name": "XXE",
+   "detail": "SVG uploads, DOCX/XLSX, OOB DTD"
+  },
+  {
+   "name": "File Upload",
+   "detail": "extension bypass, Content-Type, double extensions, web shell"
+  },
+  {
+   "name": "LFI/RFI",
+   "detail": "path traversal, PHP wrappers, log poisoning"
+  },
+  {
+   "name": "CSRF",
+   "detail": "missing tokens, SameSite bypass"
+  },
+  {
+   "name": "Open Redirect",
+   "detail": "absolute URLs, @ syntax, hash manipulation"
+  },
+  {
+   "name": "Prototype Pollution",
+   "detail": "proto, constructor.prototype"
+  },
+  {
+   "name": "Cache Poisoning",
+   "detail": "header reflection, X-Forwarded-Host"
+  },
+  {
+   "name": "Subdomain Takeover",
+   "detail": "dangling CNAMEs"
+  },
+  {
+   "name": "GraphQL",
+   "detail": "introspection, authorization, injection"
+  },
+  {
+   "name": "WebSockets",
+   "detail": "message injection, auth bypass"
+  },
+  {
+   "name": "OAuth",
+   "detail": "redirect_uri, state, PKCE, code interception"
+  },
+  {
+   "name": "Business Logic",
+   "detail": "workflow bypass, pricing, race conditions"
+  },
+  {
+   "name": "Deserialization",
+   "detail": "Java, PHP, Python, .NET gadget chains"
+  },
+  {
+   "name": "Memory Corruption",
+   "detail": "buffer overflow, UAF, format string, integer overflow"
+  },
+  {
+   "name": "Auth Bypass",
+   "detail": "SQLi-based, JWT alg=none, session prediction"
+  },
+  {
+   "name": "Privilege Escalation",
+   "detail": "horizontal, vertical, AD, sudo"
+  },
+  {
+   "name": "Cryptography",
+   "detail": "weak ciphers, ECB, hardcoded keys, timing attacks"
+  },
+  {
+   "name": "Secrets Exposure",
+   "detail": "API keys in code, git history, logs"
+  },
+  {
+   "name": "Prompt Injection",
+   "detail": "direct, indirect, MCP tool poisoning, semantic"
+  },
+  {
+   "name": "Smart Contract",
+   "detail": "reentrancy, flash loans, oracle manipulation, MEV"
+  }
+ ],
+ "tooling": [
+  {
+   "name": "Reconnaissance / OSINT",
+   "tools": [
+    "subfinder",
+    "amass",
+    "assetfinder",
+    "findomain",
+    "chaos",
+    "crt.sh",
+    "Censys",
+    "Shodan",
+    "theHarvester",
+    "SpiderFoot",
+    "securitytrails"
+   ]
+  },
+  {
+   "name": "HTTP/URL Discovery",
+   "tools": [
+    "gau",
+    "waybackurls",
+    "katana",
+    "ffuf",
+    "gobuster",
+    "feroxbuster",
+    "httpx",
+    "httprobe",
+    "aquatone",
+    "linkfinder",
+    "kiterunner"
+   ]
+  },
+  {
+   "name": "Network Scanning",
+   "tools": [
+    "nmap",
+    "naabu",
+    "masscan",
+    "rustscan",
+    "Bettercap",
+    "Responder",
+    "testssl.sh",
+    "sslscan"
+   ]
+  },
+  {
+   "name": "Web Proxy / Interception",
+   "tools": [
+    "Burp Suite",
+    "OWASP ZAP",
+    "mitmproxy"
+   ]
+  },
+  {
+   "name": "Web Fuzzing / Scanning",
+   "tools": [
+    "ffuf",
+    "nuclei",
+    "sqlmap",
+    "dalfox",
+    "XSStrike",
+    "wpscan",
+    "nikto",
+    "graphqler",
+    "crackql",
+    "inql"
+   ]
+  },
+  {
+   "name": "API Testing",
+   "tools": [
+    "RESTler",
+    "arjun",
+    "jwt_tool",
+    "Postman",
+    "vespasian",
+    "apithief",
+    "apiprober"
+   ]
+  },
+  {
+   "name": "Password / Credential",
+   "tools": [
+    "hashcat",
+    "John the Ripper",
+    "CeWL",
+    "hydra",
+    "medusa",
+    "mimikatz",
+    "secretsdump",
+    "linpeas",
+    "winpeas"
+   ]
+  },
+  {
+   "name": "Exploitation Frameworks",
+   "tools": [
+    "Metasploit",
+    "searchsploit",
+    "Sliver",
+    "Havoc",
+    "Pacu",
+    "pwnable.kr"
+   ]
+  },
+  {
+   "name": "Post-Exploitation",
+   "tools": [
+    "linpeas",
+    "winpeas",
+    "BloodHound",
+    "Certipy",
+    "Impacket",
+    "chisel",
+    "ligolo-ng"
+   ]
+  },
+  {
+   "name": "Wireless",
+   "tools": [
+    "aircrack-ng",
+    "bettercap",
+    "killerbee",
+    "chirpotle",
+    "z-attack-ng",
+    "angryoxide"
+   ]
+  },
+  {
+   "name": "Cloud",
+   "tools": [
+    "Pacu",
+    "ScoutSuite",
+    "cloud-custodian",
+    "checkov",
+    "terrascan",
+    "trivy",
+    "grype",
+    "syft",
+    "cloudsploit"
+   ]
+  },
+  {
+   "name": "Mobile",
+   "tools": [
+    "MobSF",
+    "Frida",
+    "jadx",
+    "apktool",
+    "objection",
+    "medusa",
+    "rekit",
+    "revkit"
+   ]
+  },
+  {
+   "name": "Social Engineering",
+   "tools": [
+    "GoPhish",
+    "evilginx2",
+    "SET",
+    "modlishka"
+   ]
+  },
+  {
+   "name": "Evasion",
+   "tools": [
+    "Donut",
+    "LOLBins",
+    "AMSI bypass",
+    "AV/EDR evasion"
+   ]
+  },
+  {
+   "name": "Forensic / DFIR",
+   "tools": [
+    "Volatility3",
+    "AVML",
+    "Timesketch",
+    "Velociraptor",
+    "Elastic SIEM",
+    "Splunk",
+    "Wazuh",
+    "Sigma"
+   ]
+  },
+  {
+   "name": "Binary / Reverse Engineering",
+   "tools": [
+    "Ghidra",
+    "Radare2",
+    "Binary Ninja",
+    "IDA",
+    "GDB",
+    "pwndbg",
+    "GEF",
+    "pwntools",
+    "angr",
+    "ROPGadget"
+   ]
+  },
+  {
+   "name": "Compliance",
+   "tools": [
+    "OpenSCAP",
+    "Lynis",
+    "kube-bench",
+    "kube-hunter"
+   ]
+  },
+  {
+   "name": "Static Analysis / Code Review",
+   "tools": [
+    "CodeQL",
+    "Semgrep",
+    "SonarQube",
+    "ESLint",
+    "SpotBugs",
+    "Bandit",
+    "gosec",
+    "cargo-audit",
+    "npm audit",
+    "pip-audit",
+    "slither",
+    "mythril"
+   ]
+  },
+  {
+   "name": "Fuzzing",
+   "tools": [
+    "AFL++",
+    "libFuzzer",
+    "Honggfuzz",
+    "Angora",
+    "VUzzer",
+    "Eclipser",
+    "QSYM",
+    "Driller",
+    "Echidna",
+    "Medusa",
+    "Halmos"
+   ]
+  },
+  {
+   "name": "Claude Code Specific",
+   "tools": [
+    "scope_check.py"
+   ]
+  }
+ ]
+}

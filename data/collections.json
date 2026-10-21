@@ -1,0 +1,135 @@
+[
+ {
+  "id": "oauth-oidc-sso",
+  "name": "OAuth, OIDC & SSO",
+  "description": "Redirect-URI abuse, token theft, PKCE weaknesses and single-sign-on bypasses.",
+  "source": "OAuth/OIDC & SSO Exploitation: Exhaustive Research Source Compilation",
+  "count": 124
+ },
+ {
+  "id": "cloud-iam-attack-paths",
+  "name": "Cloud IAM & Attack Paths",
+  "description": "Cross-account privilege escalation and attack-path analysis in AWS, Azure and GCP.",
+  "source": "Deep Research Agent 11: Cloud IAM Privilege Escalation & Multi-Account Attack Path Detection",
+  "count": 116
+ },
+ {
+  "id": "graphql-api-security",
+  "name": "GraphQL & API Security",
+  "description": "Introspection abuse, authorization testing and automated API security workflows.",
+  "source": "Deep Research Agent 6: GraphQL & API Security Automation",
+  "count": 86
+ },
+ {
+  "id": "web3-smart-contracts",
+  "name": "Web3 & Smart Contracts",
+  "description": "Reentrancy, oracle manipulation, MEV and smart-contract analysis tooling.",
+  "source": "Web3 & Smart Contract Vulnerability Research — Comprehensive Source Catalog",
+  "count": 84
+ },
+ {
+  "id": "dependency-confusion-ci-cd",
+  "name": "Dependency Confusion & CI/CD",
+  "description": "Package-registry confusion, typosquatting detection and compromise of build pipelines.",
+  "source": "EXHAUSTIVE RESEARCH REPORT: Automated Dependency Confusion Attacks, Typosquatting Detection, and CI/CD Pipeline Compromise Techniques",
+  "count": 82
+ },
+ {
+  "id": "container-escape-kubernetes",
+  "name": "Container Escape & Kubernetes",
+  "description": "Container escapes, cluster privilege escalation and misconfiguration exploitation.",
+  "source": "Research Agent 9: Container Escape Detection, Kubernetes Privilege Escalation, and Cluster Misconfiguration Exploitation",
+  "count": 78
+ },
+ {
+  "id": "mobile-pentesting",
+  "name": "Mobile Pentesting",
+  "description": "Android/iOS decompilation, SSL pinning bypass and runtime instrumentation.",
+  "source": "MOBILE PENTESTING RESEARCH: DECOMPILATION, SSL PINNING BYPASS & RUNTIME MANIPULATION",
+  "count": 74
+ },
+ {
+  "id": "methodologies-frameworks",
+  "name": "Methodologies & Frameworks",
+  "description": "PTES, OWASP WSTG/ASVS, NIST, MITRE ATT&CK and adjacent standards.",
+  "source": "METHODOLOGIES & FRAMEWORKS (15 sources)",
+  "count": 71
+ },
+ {
+  "id": "container-kubernetes-posture",
+  "name": "Container & Kubernetes Posture",
+  "description": "Hardening, runtime security and posture management for cloud-native workloads.",
+  "source": "**CONTAINER & KUBERNETES SECURITY POSTURE — EXHAUSTIVE RESEARCH COMPILATION**",
+  "count": 56
+ },
+ {
+  "id": "graphql-reconnaissance",
+  "name": "GraphQL Reconnaissance",
+  "description": "Introspection as a discovery channel and GraphQL-specific reconnaissance.",
+  "source": "I. GraphQL Introspection Attacks & Reconnaissance",
+  "count": 56
+ },
+ {
+  "id": "ai-driven-fuzzing",
+  "name": "AI-Driven Fuzzing",
+  "description": "LLM-guided fuzzer synthesis, harness generation and symbolic execution.",
+  "source": "COMPREHENSIVE RESEARCH SOURCES: AI-DRIVEN VULNERABILITY DISCOVERY & FUZZING",
+  "count": 52
+ },
+ {
+  "id": "cloud-misconfiguration-at-scale",
+  "name": "Cloud Misconfiguration at Scale",
+  "description": "Detecting and exploiting misconfigured cloud services across large estates.",
+  "source": "Deep Research Agent 10: Cloud Security Misconfiguration at Scale",
+  "count": 52
+ },
+ {
+  "id": "llm-attack-surfaces",
+  "name": "LLM Attack Surfaces",
+  "description": "Prompt injection, tool poisoning and automated exploitation of LLM agents.",
+  "source": "DEEP RESEARCH REPORT: LLM Attack Surfaces & Automated Exploitation",
+  "count": 49
+ },
+ {
+  "id": "oauth-token-attacks-sso-bypass",
+  "name": "OAuth Token Attacks & SSO Bypass",
+  "description": "Token interception, authorization-code injection and SSO trust abuse.",
+  "source": "Research Compilation: OAuth Token Fishing, Authorization Code Injection & SSO Bypass",
+  "count": 48
+ },
+ {
+  "id": "wireless-bluetooth-iot",
+  "name": "Wireless, Bluetooth & IoT",
+  "description": "Wi-Fi, BLE, RF and embedded-device protocol research.",
+  "source": "COMPREHENSIVE RESEARCH FINDINGS: WIRELESS & IoT PROTOCOL EXPLOITATION",
+  "count": 46
+ },
+ {
+  "id": "llm-security-prompt-injection",
+  "name": "LLM Security & Prompt Injection",
+  "description": "Defences, benchmarks and red-teaming material for language-model systems.",
+  "source": "**COMPREHENSIVE SOURCE REPOSITORY: LLM SECURITY & PROMPT INJECTION**",
+  "count": 42
+ },
+ {
+  "id": "mobile-reverse-engineering",
+  "name": "Mobile Reverse Engineering",
+  "description": "Automated APK/IPA analysis, hooking frameworks and obfuscation handling.",
+  "source": "**COMPREHENSIVE RESEARCH: MOBILE APP REVERSE ENGINEERING AUTOMATION**",
+  "count": 41
+ },
+ {
+  "id": "ml-for-vulnerability-discovery",
+  "name": "ML for Vulnerability Discovery",
+  "description": "Learning-based bug finding, fuzzing and program-analysis research.",
+  "source": "Deep Research Report: Machine Learning Approaches for Automated Vulnerability Discovery",
+  "count": 40
+ },
+ {
+  "id": "supply-chain-dependencies",
+  "name": "Supply Chain & Dependencies",
+  "description": "Dependency scanning, SBOM analysis and software-supply-chain attack paths.",
+  "source": "SUPPLY CHAIN & DEPENDENCY VULNERABILITY AUTOMATION: COMPREHENSIVE RESEARCH",
+  "count": 19
+ }
+]

@@ -1,0 +1,290 @@
+[
+ {
+  "dir": "03_repos/awesome-pentest",
+  "name": "awesome-pentest",
+  "url": "https://github.com/enaqx/awesome-pentest",
+  "stars": 26604,
+  "description": "Awesome pentesting resources list",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/nahamsec-resources",
+  "name": "nahamsec-resources",
+  "url": "https://github.com/nahamsec/Resources-for-Beginner-Bug-Bounty-Hunters",
+  "stars": 11923,
+  "description": "Curated beginner collection",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/cai",
+  "name": "cai",
+  "url": "https://github.com/aliasrobotics/cai",
+  "stars": 9644,
+  "description": "Cybersecurity AI framework",
+  "category": "Toolkits & frameworks"
+ },
+ {
+  "dir": "03_repos/trailofbits-skills",
+  "name": "trailofbits-skills",
+  "url": "https://github.com/trailofbits/skills",
+  "stars": 6655,
+  "description": "79 security skills",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/bugbounty-cheatsheet",
+  "name": "bugbounty-cheatsheet",
+  "url": "https://github.com/EdOverflow/bugbounty-cheatsheet",
+  "stars": 6000,
+  "description": "Payloads, tips, books",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/shuvonsec-claude-bug-bounty",
+  "name": "shuvonsec-claude-bug-bounty",
+  "url": "https://github.com/shuvonsec/claude-bug-bounty",
+  "stars": 4256,
+  "description": "AI bug bounty hunting",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/claude-bughunter",
+  "name": "claude-bughunter",
+  "url": "https://github.com/elementalsouls/Claude-BugHunter",
+  "stars": 3699,
+  "description": "82 skills, 681 disclosed-report patterns",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/H-mmer-pentest-agents",
+  "name": "H-mmer-pentest-agents",
+  "url": "https://github.com/H-mmer/pentest-agents",
+  "stars": 802,
+  "description": "48 agents, exploit chains",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/MyuriKanao-src-hunter-skill",
+  "name": "MyuriKanao-src-hunter-skill",
+  "url": "https://github.com/MyuriKanao/src-hunter-skill",
+  "stars": 599,
+  "description": "305 payloads, 263 WAF bypasses",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/bug-bounty-methodology-2025",
+  "name": "bug-bounty-methodology-2025",
+  "url": "https://github.com/amrelsagaei/Bug-Bounty-Hunting-Methodology-2025",
+  "stars": 477,
+  "description": "Bug Bounty Methodology 2025",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/transilienceai-communitytools",
+  "name": "transilienceai-communitytools",
+  "url": "https://github.com/transilienceai/communitytools",
+  "stars": 476,
+  "description": "Open-source pentest skills",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/bugbountyguide",
+  "name": "bugbountyguide",
+  "url": "https://github.com/EdOverflow/bugbountyguide",
+  "stars": 472,
+  "description": "BBB launchpad",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/Gabson0x-bountyforge",
+  "name": "Gabson0x-bountyforge",
+  "url": "https://github.com/Gabson0x/bountyforge",
+  "stars": 383,
+  "description": "Bug bounty + smart contracts",
+  "category": "Toolkits & frameworks"
+ },
+ {
+  "dir": "03_repos/shuvonsec-public-skills-builder",
+  "name": "shuvonsec-public-skills-builder",
+  "url": "https://github.com/shuvonsec/public-skills-builder",
+  "stars": 221,
+  "description": "Generate skills from HackerOne reports",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/secskills",
+  "name": "secskills",
+  "url": "https://github.com/trilwu/secskills",
+  "stars": 111,
+  "description": "Security skills (offense/defense/core)",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/claude-pentest",
+  "name": "claude-pentest",
+  "url": "https://github.com/stickman230/claude-pentest",
+  "stars": 84,
+  "description": "15 agents, 63 attack categories",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/perseus",
+  "name": "perseus",
+  "url": "https://github.com/kaivyy/perseus",
+  "stars": 67,
+  "description": "Multi-language security assessment",
+  "category": "Toolkits & frameworks"
+ },
+ {
+  "dir": "03_repos/threatswarm",
+  "name": "threatswarm",
+  "url": "https://github.com/mukul975/Threatswarm",
+  "stars": 66,
+  "description": "27 agents, 754 MITRE-mapped skills",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/h4ckologic-bughunter-ai",
+  "name": "h4ckologic-bughunter-ai",
+  "url": "https://github.com/h4ckologic/bughunter-ai",
+  "stars": 64,
+  "description": "20 AI agents, state-machine",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/gigioneggiando-argo",
+  "name": "gigioneggiando-argo",
+  "url": "https://github.com/gigioneggiando/argo",
+  "stars": 53,
+  "description": "LLM-native static vuln detection",
+  "category": "Toolkits & frameworks"
+ },
+ {
+  "dir": "03_repos/26zl-cybersec-toolkit",
+  "name": "26zl-cybersec-toolkit",
+  "url": "https://github.com/26zl/cybersec-toolkit",
+  "stars": 40,
+  "description": "670+ tools, 870+ skills",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/security-skills",
+  "name": "security-skills",
+  "url": "https://github.com/mn-youssef/security-skills",
+  "stars": 40,
+  "description": "Defensive + offensive skills",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/0xGhostCAT-claude-ai-cyber-security-skills",
+  "name": "0xGhostCAT-claude-ai-cyber-security-skills",
+  "url": "https://github.com/0xGhostCAT/claude-ai-cyber-security-skills",
+  "stars": 36,
+  "description": "30 skills + 60 tools",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/Orizon-eu-claude-code-pentest",
+  "name": "Orizon-eu-claude-code-pentest",
+  "url": "https://github.com/Orizon-eu/claude-code-pentest",
+  "stars": 23,
+  "description": "6 skills, full pentest lifecycle",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/payloadsallthethings-skills",
+  "name": "payloadsallthethings-skills",
+  "url": "https://github.com/mohdhaji87/payloadsallthethings-skills",
+  "stars": 21,
+  "description": "61 skills from PATT",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/bug-bounty-roadmap-2025",
+  "name": "bug-bounty-roadmap-2025",
+  "url": "https://github.com/l3tchupkt/Bug-Bounty-Roadmap-2025",
+  "stars": 3,
+  "description": "10-phase progressive roadmap",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/bug-bounty-methodology-2026",
+  "name": "bug-bounty-methodology-2026",
+  "url": "https://github.com/ItsDarker/Bug-Bounty-Methodology-2026",
+  "stars": null,
+  "description": "7-phase workflow 2026",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/claude-code-plugins-plus",
+  "name": "claude-code-plugins-plus",
+  "url": "https://github.com/danielmiessler/claude-code-plugins-plus",
+  "stars": null,
+  "description": "25 security plugins",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/claude-skills-pentest",
+  "name": "claude-skills-pentest",
+  "url": "https://github.com/WolzenGeorgi/claude-skills-pentest",
+  "stars": null,
+  "description": "VPS-based scanner",
+  "category": "Claude Code & agents"
+ },
+ {
+  "dir": "03_repos/hardware-all-the-things",
+  "name": "hardware-all-the-things",
+  "url": "https://github.com/swisskyrepo/HardwareAllTheThings",
+  "stars": null,
+  "description": "IoT/hardware pentest wiki",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/internal-all-the-things",
+  "name": "internal-all-the-things",
+  "url": "https://github.com/swisskyrepo/InternalAllTheThings",
+  "stars": null,
+  "description": "AD/internal pentest cheatsheets",
+  "category": "Learning & methodology"
+ },
+ {
+  "dir": "03_repos/owasp-asvs",
+  "name": "owasp-asvs",
+  "url": "https://github.com/OWASP/ASVS",
+  "stars": null,
+  "description": "ASVS 5.0 (May 2025)",
+  "category": "OWASP & standards"
+ },
+ {
+  "dir": "03_repos/owasp-cheatsheets",
+  "name": "owasp-cheatsheets",
+  "url": "https://github.com/OWASP/CheatSheetSeries",
+  "stars": null,
+  "description": "Full Cheat Sheet Series",
+  "category": "OWASP & standards"
+ },
+ {
+  "dir": "03_repos/owasp-secure-agent-playbook",
+  "name": "owasp-secure-agent-playbook",
+  "url": "https://github.com/OWASP/secure-agent-playbook",
+  "stars": null,
+  "description": "AI-assisted security plays",
+  "category": "OWASP & standards"
+ },
+ {
+  "dir": "03_repos/owasp-wstg",
+  "name": "owasp-wstg",
+  "url": "https://github.com/OWASP/www-project-web-security-testing-guide",
+  "stars": null,
+  "description": "WSTG v5.0",
+  "category": "OWASP & standards"
+ },
+ {
+  "dir": "03_repos/payloads-all-the-things",
+  "name": "payloads-all-the-things",
+  "url": "https://github.com/swisskyrepo/PayloadsAllTheThings",
+  "stars": null,
+  "description": "63+ vuln categories",
+  "category": "Toolkits & frameworks"
+ }
+]

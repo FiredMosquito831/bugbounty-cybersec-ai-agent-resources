@@ -1,11 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
 # OS files
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Cloned repos (already versioned upstream — see REPO_MANIFEST.md for URLs)
+# Cloned repositories (already versioned upstream — see REPO_MANIFEST.md)
 repertoire/03_repos/*/
-# But track the manifest
 !repertoire/REPO_MANIFEST.md
 
 # Temporary extraction scripts (keep the outputs, not the scripts)

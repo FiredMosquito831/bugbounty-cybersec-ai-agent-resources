@@ -1,0 +1,38 @@
+name: build
+
+on:
+  push:
+    branches: [main, revamp]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build datasets
+        run: python scripts/build_data.py
+
+      - name: Build site
+        run: python scripts/build_site.py
+
+      - name: Run tests
+        run: pytest
+
+      - name: Check generated output is committed
+        run: |
+          if ! git diff --exit-code --stat -- data docs; then
+            echo "::error::Generated data/ or docs/ is out of date. Run build_data.py and build_site.py, then commit the result."
+            exit 1
+          fi
