@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="library-head">
+  <div class="container">
+    <div class="section-kicker">taxonomy</div>
+    <h1>What the agent must reason about</h1>
+    <p>OWASP classifications, additional vulnerability classes and the tooling groups the research identified. Extracted from <code>repertoire/AUTONOMOUS_AGENT_CONTEXT.md</code>.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="container">
+    <div class="tax-section">
+      <h2>OWASP Top 10 (2021)</h2>
+      <div class="owasp-list">
+        {% for item in taxonomy.owasp_top10_2021 %}
+          <div class="owasp-item">
+            <span class="code">{{ item.code }}</span>
+            <div><strong>{{ item.name }}</strong><p>{{ item.detail }}</p></div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="tax-section">
+        <h2>OWASP Top 10:2025 changes</h2>
+        <div class="card">
+          <ul style="margin:0;padding-left:20px;color:var(--ink-2);font-size:13.5px">
+            {% for change in taxonomy.owasp_2025_changes %}<li>{{ change }}</li>{% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="tax-section">
+        <h2>OWASP API Top 10 (2023)</h2>
+        <div class="card">
+          <div class="tool-chips">
+            {% for item in taxonomy.owasp_api_top10 %}<span class="tool-chip">{{ item }}</span>{% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tax-section">
+      <h2>Additional vulnerability classes</h2>
+      <div class="class-grid">
+        {% for item in taxonomy.vulnerability_classes %}
+          <div class="class-item"><strong>{{ item.name }}</strong><p>{{ item.detail }}</p></div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="tax-section">
+      <h2>Tooling taxonomy</h2>
+      {% for group in taxonomy.tooling %}
+        <div class="tool-group">
+          <h3>{{ group.name }}</h3>
+          <div class="tool-chips">
+            {% for tool in group.tools %}<span class="tool-chip">{{ tool }}</span>{% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block jsonld %}
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Bounty Atlas — autonomous bug-bounty research archive",
+  "description": "{{ description }}",
+  "url": "{{ site_url }}/",
+  "keywords": ["bug bounty", "vulnerability discovery", "LLM security", "autonomous agents", "security research"],
+  "creator": {"@type": "Person", "name": "FiredMosquito831", "url": "{{ github_url }}"},
+  "isAccessibleForFree": true,
+  "license": "https://github.com/FiredMosquito831/bugbounty-cybersec-ai-agent-resources/blob/main/LICENSE",
+  "variableMeasured": [
+    {"@type": "PropertyValue", "name": "catalogued sources", "value": {{ stats.sources }}},
+    {"@type": "PropertyValue", "name": "research collections", "value": {{ stats.collections }}},
+    {"@type": "PropertyValue", "name": "papers", "value": {{ stats.papers }}},
+    {"@type": "PropertyValue", "name": "reference repositories", "value": {{ stats.repos }}}
+  ]
+}
+{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <span class="eyebrow"><span class="dot"></span> Phase 1 · research foundation · verified sources</span>
+    <h1>The research atlas for<br><em>autonomous security agents.</em></h1>
+    <p class="lede">
+      A curated, indexed knowledge base for building an AI agent that performs authorised
+      bug-bounty hunting and vulnerability discovery — <strong>{{ stats.sources }} sources</strong>,
+      <strong>{{ stats.papers }} papers</strong>, <strong>{{ stats.repos }} repositories</strong>
+      and a full vulnerability and tooling taxonomy.
+    </p>
+
+    <form class="search-form" action="library.html" method="get" role="search">
+      <label class="search-input">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" name="q" placeholder="Search sources — prompt injection, GraphQL, fuzzing, OAuth…" aria-label="Search the source library">
+      </label>
+      <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <p class="search-hint">tip: press <kbd>/</kbd> in the library to focus search · {{ stats.hosts }} distinct hosts · {{ stats.described }} annotated</p>
+
+    <div class="stats">
+      <div class="stat"><strong>{{ stats.sources|num }}</strong><span>catalogued <em>sources</em></span></div>
+      <div class="stat"><strong>{{ stats.papers }}</strong><span>downloaded <em>papers</em></span></div>
+      <div class="stat"><strong>{{ stats.repos }}</strong><span>reference <em>repositories</em></span></div>
+      <div class="stat"><strong>{{ stats.repo_stars|num }}</strong><span>combined repo <em>stars</em></span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker">start here</div><h2>Three ways into the archive</h2>
+        <p>Every page is generated from the research data in this repository.</p></div>
+    </div>
+    <div class="start-grid">
+      <a class="start-card" href="library.html">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <h3>Source library</h3>
+        <p>Search and filter {{ stats.sources|num }} curated sources across {{ stats.collections }} research collections, with descriptions and direct links.</p>
+        <span class="go">browse →</span>
+      </a>
+      <a class="start-card" href="papers.html">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h8l4 4v16H6Z"/><path d="M14 2v4h4"/><path d="M9 13h6M9 17h6"/></svg>
+        <h3>Papers</h3>
+        <p>{{ stats.papers }} downloaded papers on LLM fuzzing, prompt-injection defence and autonomous agents — {{ stats.anchors }} flagged as anchor reading.</p>
+        <span class="go">read →</span>
+      </a>
+      <a class="start-card" href="blueprint.html">
+        <svg class="icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16M4 12h16M4 19h10"/><circle cx="19" cy="19" r="2"/></svg>
+        <h3>Agent blueprint</h3>
+        <p>{{ stats.insights }} architecture insights from verified research, plus the four-phase roadmap from archive to working agent.</p>
+        <span class="go">design →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker">collections</div><h2>Research collections</h2>
+        <p>Each collection is one deep-research batch. All {{ stats.collections }} are browsable.</p></div>
+      <a class="link" href="collections.html">View all {{ stats.collections }} →</a>
+    </div>
+    <div class="grid-3">
+      {% for collection in collections %}
+        <a class="card card-link collection-card" href="library.html?c={{ collection.id }}">
+          <div class="bar"></div>
+          <h3>{{ collection.name }}</h3>
+          <p>{{ collection.description }}</p>
+          <div class="meta"><span class="count-pill">{{ collection.count }} sources</span><span>open →</span></div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div><div class="section-kicker">anchor reading</div><h2>Papers that shape the design</h2>
+        <p>Marked ★★★★★ in the research: architecture-defining rather than background.</p></div>
+      <a class="link" href="papers.html">All {{ stats.papers }} papers →</a>
+    </div>
+    {% for paper in papers if paper.anchor %}
+      {% if loop.index <= 4 %}
+        <div class="paper-row">
+          <span class="num">{{ "%02d"|format(loop.index) }}</span>
+          <div>
+            <h3>{{ paper.title }} <span class="badge anchor">anchor</span></h3>
+            <p>{{ paper.description }}</p>
+            <div class="links">
+              <a href="{{ paper.local_path }}" target="_blank" rel="noopener">open {{ paper.kind }} ↗</a>
+              {% if paper.source_url %}<a href="{{ paper.source_url }}" target="_blank" rel="noopener">source ↗</a>{% endif %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section-alt">
+  <div class="container">
+    <div class="grid-2">
+      <div>
+        <div class="section-kicker">roadmap</div>
+        <h2 style="font-size:26px;letter-spacing:-.7px;margin-bottom:18px">From archive to agent</h2>
+        <div class="timeline">
+          {% for phase in blueprint.phases %}
+            <div class="phase {{ 'done' if phase.status == 'complete' else ('next' if phase.status == 'next' else '') }}">
+              <span class="status">{{ phase.status }}</span>
+              <h3>{{ phase.phase }}. {{ phase.name }}</h3>
+              <p>{{ phase.detail }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="stack">
+        <div class="callout">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 20 6v6c0 4.5-3.2 8-8 9.5C7.2 20 4 16.5 4 12V6Z"/><path d="m9 12 2 2 4-4"/></svg>
+          <p><strong>Evidence-first.</strong> The archive stores knowledge and methodology, not exploit code. Repositories are referenced read-only; the agent operates only against targets with written permission.</p>
+        </div>
+        <div class="callout warn">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3 2.5 21h19Z"/><path d="M12 9v5M12 17h.01"/></svg>
+          <p><strong>Authorised testing only.</strong> Nothing here grants permission to test a system. See the <a href="about.html#responsible-use" class="green">responsible-use policy</a>.</p>
+        </div>
+        <div class="card">
+          <h3>What's inside</h3>
+          <p style="margin-bottom:10px">{{ stats.classes }} additional vulnerability classes · {{ stats.tools }} tools in {{ stats.tool_groups }} categories · {{ stats.collections }} collections · {{ stats.papers }} papers.</p>
+          <div class="meta"><a class="green" href="taxonomy.html">Explore the taxonomy →</a><span>{{ generated }}</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

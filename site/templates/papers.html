@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="library-head">
+  <div class="container">
+    <div class="section-kicker">papers</div>
+    <h1>{{ stats.papers }} downloaded papers</h1>
+    <p>Full copies are stored in the repository and served from this site — {{ stats.anchors }} are marked as anchor reading by the research.</p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="container">
+    <div class="grid-2">
+      {% for paper in papers %}
+        <article class="card paper-card">
+          <div class="row">
+            <span class="badge kind">{{ paper.kind }}</span>
+            {% if paper.anchor %}<span class="badge anchor">anchor reading</span>{% endif %}
+          </div>
+          <h3>{{ paper.title }}</h3>
+          <p>{{ paper.description }}</p>
+          <div class="row">
+            <span>{{ paper.source_label }}</span>
+            <span>{{ paper.file }}</span>
+          </div>
+          {% if paper.alternates %}
+            <div class="row" style="display:block;color:var(--muted)">
+              Alternate copy:
+              {% for alt in paper.alternates %}
+                <a href="papers/{{ alt.file }}" target="_blank" rel="noopener" style="color:var(--cyan)">{{ alt.file }}</a>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </div>
+          {% endif %}
+          <div class="paper-actions">
+            <a class="btn btn-outline btn-sm" href="{{ paper.local_path }}" target="_blank" rel="noopener">Open {{ paper.kind }} ↗</a>
+            {% if paper.source_url %}
+              <a class="btn btn-ghost btn-sm" href="{{ paper.source_url }}" target="_blank" rel="noopener">Original source ↗</a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

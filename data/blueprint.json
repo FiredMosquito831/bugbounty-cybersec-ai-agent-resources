@@ -1,0 +1,86 @@
+{
+ "insights": [
+  {
+   "number": 1,
+   "title": "Composition Beats Model Selection",
+   "finding": "Sailor pipeline found 379 vulns vs Claude Code alone finding 12 (30x)",
+   "why": "The agent's architecture (how components compose) matters more than which LLM it uses",
+   "how": "Design multi-phase pipelines (static analysis → LLM synthesis → symbolic execution → validation), not single-pass LLM calls"
+  },
+  {
+   "number": 2,
+   "title": "Every Component Is Essential",
+   "finding": "Removing ANY guidance mechanism collapses performance to near-baseline",
+   "why": "Don't build a \"good enough\" agent with missing pieces — each component (targeting, feedback, validation) is load-bearing",
+   "how": "Include ALL of: static analysis targeting, iterative LLM feedback loops, concrete validation, evidence capture"
+  },
+  {
+   "number": 3,
+   "title": "Multi-Agent, Multi-Model",
+   "finding": "Different LLMs for planning (GPT-o3-mini) vs execution (LLaMA 3.1) vs summarization (GPT-4o) increases accuracy",
+   "why": "One model for all tasks is suboptimal",
+   "how": "Route tasks to specialized agents/models based on task type"
+  },
+  {
+   "number": 4,
+   "title": "Scope Enforcement at OS Level",
+   "finding": "Deterministic hooks outside the agent loop prevent scope violations",
+   "why": "Autonomous agents need hard boundaries, not prompt-instruction boundaries",
+   "how": "Implement `scope_check.py`-style hooks that run OUTSIDE the agent loop, CIDR-aware"
+  },
+  {
+   "number": 5,
+   "title": "Evidence-First",
+   "finding": "No theoretical findings — only verified PoCs with captured evidence",
+   "why": "Bug bounty platforms reject reports without working proofs",
+   "how": "Every finding must produce: working PoC + HTTP evidence + screenshot + CVSS"
+  },
+  {
+   "number": 6,
+   "title": "Disclosed-Report Patterns",
+   "finding": "681 disclosed-report patterns + 2887 HackerOne cases available as structured data",
+   "why": "Agent should learn from what actually gets paid, not just theory",
+   "how": "Train/fine-tune on disclosed reports; use as few-shot examples for vulnerability classes"
+  },
+  {
+   "number": 7,
+   "title": "MITRE ATT&CK Mapping",
+   "finding": "Every technique mapped to ATT&CK, CSF 2.0, ATLAS, D3FEND, AI RMF",
+   "why": "Structured threat intelligence enables systematic coverage",
+   "how": "Map every agent action to ATT&CK technique for coverage tracking"
+  },
+  {
+   "number": 8,
+   "title": "Lifecycle Security",
+   "finding": "Protection across initialization → input → memory → decision → execution",
+   "why": "Agent security failures propagate across stages",
+   "how": "Defense-in-depth at each agent lifecycle stage"
+  }
+ ],
+ "phases": [
+  {
+   "phase": 1,
+   "name": "Research & curation",
+   "status": "complete",
+   "detail": "This archive: sources, papers, repositories and taxonomies."
+  },
+  {
+   "phase": 2,
+   "name": "Architecture design",
+   "status": "next",
+   "detail": "Agent roles, model routing, tool interface, scope enforcement and evidence capture."
+  },
+  {
+   "phase": 3,
+   "name": "Agent implementation",
+   "status": "planned",
+   "detail": "Recon, analysis, validation and reporting stages with deterministic guardrails."
+  },
+  {
+   "phase": 4,
+   "name": "Testing & iteration",
+   "status": "planned",
+   "detail": "Benchmarks against known targets, ablation studies and regression suites."
+  }
+ ]
+}

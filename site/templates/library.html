@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="library-head">
+  <div class="container">
+    <div class="section-kicker">source library</div>
+    <h1>{{ stats.sources|num }} curated sources</h1>
+    <p>Every source catalogued during the research phase, with its collection and description. Links open the original resource.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="toolbar" role="search">
+    <div class="search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" id="q" placeholder="Search title, description or host…" autocomplete="off" aria-label="Search sources">
+    </div>
+    <select id="collection" aria-label="Filter by collection">
+      <option value="">All collections</option>
+      {% for collection in collections %}
+        <option value="{{ collection.id }}">{{ collection.name }} ({{ collection.count }})</option>
+      {% endfor %}
+    </select>
+    <select id="sort" aria-label="Sort results">
+      <option value="relevance">Best match</option>
+      <option value="title">Title A–Z</option>
+      <option value="collection">Collection</option>
+      <option value="host">Host A–Z</option>
+    </select>
+    <select id="described" aria-label="Filter annotated sources">
+      <option value="any">All sources</option>
+      <option value="yes">With description</option>
+      <option value="no">Without description</option>
+    </select>
+  </div>
+
+  <div class="results-meta">
+    <span id="resultCount">Loading…</span>
+    <span id="activeFilters"></span>
+  </div>
+
+  <div id="results" class="result-list" aria-live="polite"></div>
+
+  <noscript>
+    <div class="empty-state">
+      <h3>The library needs JavaScript</h3>
+      <p>Enable JavaScript to search and filter, or browse the <a class="green" href="collections.html">collections</a> and <a class="green" href="papers.html">papers</a> directly.</p>
+    </div>
+  </noscript>
+
+  <div class="pager" id="pager"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/library.js"></script>
+{% endblock %}

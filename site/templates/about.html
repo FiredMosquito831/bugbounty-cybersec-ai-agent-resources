@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="library-head">
+  <div class="container">
+    <div class="section-kicker">about</div>
+    <h1>What this archive is</h1>
+    <p class="lead" style="max-width:760px;margin-top:8px">
+      Bounty Atlas is the Phase 1 research foundation for an autonomous bug-bounty and
+      vulnerability-discovery agent. It indexes the methodology, papers, tooling and real-world
+      patterns an agent needs to reason about security testing — and it is published as a site so
+      the research can be searched instead of grepped.
+    </p>
+  </div>
+</section>
+
+<section style="padding-top:8px">
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><strong>{{ stats.sources|num }}</strong><span>sources across <em>{{ stats.hosts }}</em> hosts</span></div>
+      <div class="stat"><strong>{{ stats.collections }}</strong><span>research <em>collections</em></span></div>
+      <div class="stat"><strong>{{ stats.papers }}</strong><span>downloaded <em>papers</em></span></div>
+      <div class="stat"><strong>{{ stats.repos }}</strong><span>reference <em>repositories</em></span></div>
+    </div>
+
+    <div class="grid-2 mt-40">
+      <div class="prose">
+        <h2>What's inside</h2>
+        <ul>
+          <li><strong>{{ stats.sources|num }} catalogued sources</strong> — repositories, papers, tools, standards, books and articles, each with its collection and the description recorded during research.</li>
+          <li><strong>{{ stats.collections }} collections</strong> — the deep-research batches that produced the catalogue, from cloud IAM to LLM security.</li>
+          <li><strong>{{ stats.papers }} papers</strong> — full copies stored in <code>repertoire/01_papers/</code> and served from this site.</li>
+          <li><strong>{{ stats.repos }} repositories</strong> — working trees are gitignored; the manifest records the URL and star count so any of them can be re-cloned.</li>
+          <li><strong>Taxonomy</strong> — OWASP Top 10 (2021 and 2025 changes), API Top 10, {{ stats.classes }} additional vulnerability classes and {{ stats.tools }} tools in {{ stats.tool_groups }} categories.</li>
+          <li><strong>Agent blueprint</strong> — {{ stats.insights }} architecture insights traced to their sources.</li>
+        </ul>
+
+        <h2>How it was built</h2>
+        <p>The archive was assembled through three research expansions, using deep-research workflows
+           rather than a single search pass. Findings were cross-checked against the original papers
+           and repositories; anything that could not be verified was dropped or annotated in place.
+           The site itself is generated from the archive by two scripts:</p>
+        <ul>
+          <li><code>scripts/build_data.py</code> parses the source TSV, paper index, repository manifest and context document into JSON.</li>
+          <li><code>scripts/build_site.py</code> renders the pages, copies the papers and emits the library dataset, sitemap and robots file.</li>
+        </ul>
+        <p>Counts and descriptions on every page come from those files. If a number changes here, it
+           changed in the archive — no copy is hand-maintained.</p>
+
+        <h2 id="responsible-use">Responsible use</h2>
+        <div class="callout warn">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 3 2.5 21h19Z"/><path d="M12 9v5M12 17h.01"/></svg>
+          <p>This archive is for <strong>authorised security research, education and defensive engineering</strong>.
+             Nothing in it grants permission to test a system. Always obtain written authorisation from
+             the system owner, respect the scope and rules of engagement, and stop when a test could
+             affect availability or third-party data.</p>
+        </div>
+        <p>The repository intentionally contains no exploit code or active attack tooling: it contains
+           links, metadata, papers and methodology. Reference repositories are read-only; the archive
+           does not vouch for their safety and they must be audited before use.</p>
+
+        <h2 id="license">License</h2>
+        <p>The site generator, templates and original text in this repository are released under the
+           MIT License (see <code>LICENSE</code>). Linked third-party resources, papers and
+           repositories remain the property of their authors and are governed by their own licenses.
+           Paper copies are stored for research access; follow the original source for reuse terms.</p>
+
+        <h2>Contributing</h2>
+        <p>Sources can be proposed by editing <code>repertoire/_new_sources_full.tsv</code> (five
+           tab-separated columns: collection id, collection header, title, URL, description) and
+           re-running the two build scripts. See <code>CONTRIBUTING.md</code> for the validation
+           checks. Broken links and mis-categorised entries are welcome as issues.</p>
+
+        <h2>Project links</h2>
+        <ul>
+          <li><a class="green" href="{{ github_url }}" rel="noopener">Source repository</a></li>
+          <li><a class="green" href="papers.html">Papers</a> · <a class="green" href="repos.html">Repositories</a> · <a class="green" href="taxonomy.html">Taxonomy</a></li>
+          <li><a class="green" href="blueprint.html">Agent blueprint and roadmap</a></li>
+        </ul>
+      </div>
+
+      <div class="stack">
+        <div class="card">
+          <h3>Archive status</h3>
+          <div class="timeline mt-24">
+            {% for phase in blueprint.phases %}
+              <div class="phase {{ 'done' if phase.status == 'complete' else ('next' if phase.status == 'next' else '') }}">
+                <span class="status">{{ phase.status }}</span>
+                <h3>{{ phase.phase }}. {{ phase.name }}</h3>
+                <p>{{ phase.detail }}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="card">
+          <h3>Provenance</h3>
+          <p style="margin-top:6px">Every page is generated from the files in <code>repertoire/</code>. The deployed site was built from revision {{ generated }}.</p>
+          <div class="meta"><span>{{ stats.described }} annotated sources</span><span>{{ stats.anchors }} anchor papers</span></div>
+        </div>
+        <div class="card">
+          <h3>Scope of the index</h3>
+          <p style="margin-top:6px">Web, APIs, cloud, containers, mobile, wireless, Web3, binaries, supply chain, LLM systems and agent security. Sources are catalogued, not endorsed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
